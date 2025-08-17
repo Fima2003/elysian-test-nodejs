@@ -4,6 +4,10 @@ var router = express.Router();
 const OpenAI = require('openai');
 const client = OpenAI();
 
+router.get('/', (req, res) => {
+  res.status(200).send('Sup, brotha?');
+});
+
 router.get('/get-intro', async (req, res) => {
   try {
     const response = await client.responses.create({
